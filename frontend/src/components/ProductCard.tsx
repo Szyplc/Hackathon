@@ -49,7 +49,7 @@ const ProductCard = (product: Product) => {
                         ? product.packagingKindOfMaterial
                         : "Brak danych"}{" "}
                     {product.packagingMaterialFromRecycledMaterials
-                        ? "(z materiałów z recyklingu)"
+                        ? "(z recyklingu)"
                         : ""}
                 </Typography>
             </CardContent>
