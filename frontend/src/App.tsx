@@ -1,14 +1,18 @@
-import Sidebar from './components/Sidebar/Sidebar'
-import Dashboard from './components/Dashboard/Dashboard'
+import { Grid } from "@mui/material";
+import { Products } from "./components/Products";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-
-  return (
-    <>
-      <Sidebar />
-      <Dashboard />
-    </>
-  )
+    return (
+        <Grid container>
+            <Grid size={2}>
+                <Sidebar />
+            </Grid>
+            <Grid size={10}>
+                <Products />
+            </Grid>
+        </Grid>
+    );
 }
 
-export default App
+export default App;
