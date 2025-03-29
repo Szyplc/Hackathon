@@ -69,6 +69,20 @@ export const calculateEcoScore = (product: Product): number => {
   return score;
 };
 
+export const calculateEffectiveCost = (product: Product): number => {
+  let effectiveCost = product.price / product.lifeSpan;
+  
+  if (product.energyUsePerYear !== undefined) {
+    effectiveCost += product.energyUsePerYear * energyPricePerKwh;
+  }
+  
+  if (product.waterUsePerYear !== undefined) {
+    effectiveCost += product.waterUsePerYear * waterPricePerL;
+  }
+
+  return effectiveCost;
+}
+
 
 export const calculateCostScore = (product: Product): number => {
   let score = 100;
