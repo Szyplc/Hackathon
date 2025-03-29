@@ -12,8 +12,8 @@ export interface CardProps {
 const CardContainer = ({ cards }: { cards: Product[] }) => {
   return (
     <Grid container spacing={3}>
-      {cards.map((card: any) => (
-        <Grid component="div">
+      {cards.map((card) => (
+        <Grid component="div" key={card.id}>
           <ProductCard {...card} />
         </Grid>
       ))}

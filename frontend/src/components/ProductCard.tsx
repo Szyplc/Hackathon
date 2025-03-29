@@ -36,7 +36,7 @@ const ProductCard = (product: Product) => {
                     zł
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Koszt opakowania:{" "}
+                    Rodzaj opakowania:{" "}
                     {product.packagingKindOfMaterial
                         ? product.packagingKindOfMaterial
                         : "Brak danych"}{" "}
