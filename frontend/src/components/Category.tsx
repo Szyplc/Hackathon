@@ -42,7 +42,7 @@ const CategoryPanel = ({
                                         : "inherit",
                                 color:
                                     selectedCategory === category
-                                        ? "green"
+                                        ? "white"
                                         : "inherit",
                                 "&:hover": {
                                     bgcolor: "#1976d2",
