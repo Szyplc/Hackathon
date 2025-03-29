@@ -3,10 +3,10 @@ import { calculateEffectiveCost, Product } from "../product/product";
 import { energyPricePerKwh, waterPricePerL } from "../product/constants";
 
 const ProductCard = (product: Product) => {
-    const { name, price, imageUrl } = product;
+    const { name, price, imageUrl, id } = product;
     return (
         <Card
-            sx={{ minWidth: 250, maxWidth: 250, borderRadius: 2, boxShadow: 3 }}
+            sx={{ minWidth: 250, maxWidth: 250, borderRadius: 2, boxShadow: 3 }} key={id}
         >
             <CardMedia
                 component="img"
