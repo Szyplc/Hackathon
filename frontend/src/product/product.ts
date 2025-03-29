@@ -36,7 +36,6 @@ export type Product = {
 //     metal: 2.8
 //   };
 
-
 export const calculateEcoScore = (product: Product): number => {
   let score = 100;
   
@@ -60,36 +59,31 @@ export const calculateEcoScore = (product: Product): number => {
   }
 
   if (product.lifeSpan !== undefined){
-    //
+    score += product.lifeSpan * 4;
   }
   
-  return Math.max(0, Math.min(100, score));
+  //return Math.max(0, Math.min(100, score));
+  return score;
 };
 
 
 export const calculateCostScore = (product: Product): number => {
-  let score = 70;
-  
-  const priceImpact = Math.min(40, product.price / 50);
-  score -= priceImpact;
+  let score = 100;
   
   if (product.energyUsePerYear !== undefined) {
-    const lifetimeEnergyCost = product.energyUsePerYear * energyPricePerKwh * product.lifeSpan;
-    score -= Math.min(30, lifetimeEnergyCost / 100);
+    score -= product.energyUsePerYear * energyPricePerKwh;
   }
   
   if (product.waterUsePerYear !== undefined) {
-    const lifetimeWaterCost = product.waterUsePerYear * waterPricePerL * product.lifeSpan;
-    score -= Math.min(15, lifetimeWaterCost / 50);
+    score -= product.waterUsePerYear * waterPricePerL;
   }
 
   if (product.lifeSpan !== undefined) {
-    score
+    score -= product.price / 10 * product.lifeSpan; 
   }
-  
-  score += Math.min(20, product.lifeSpan * 1.5);
-  
-  return Math.max(0, Math.min(100, score));
+
+  //return Math.max(0, Math.min(100, score));
+  return score;
 };
 
 export const getOverallScore = (
@@ -107,43 +101,6 @@ export const getOverallScore = (
   return (ecoWeight * ecoScore) + (costWeight * costScore);
 };
 
-export const calculateLifetimeCost = (product: Product): number => {
-  let totalCost = product.price;
-  
-  if (product.energyUsePerYear !== undefined) {
-    totalCost += product.energyUsePerYear * energyPricePerKwh * product.lifeSpan;
-  }
-  
-  if (product.waterUsePerYear !== undefined) {
-    totalCost += product.waterUsePerYear * waterPricePerL * product.lifeSpan;
-  }
-  
-  return totalCost;
-};
-
-
-export const calculateLifetimeCO2 = (product: Product): number => {
-  let totalCO2 = 0;
-  
-  if (product.energyUsePerYear !== undefined) {
-    totalCO2 += product.energyUsePerYear * energyCo2EmissionsPerKwh * product.lifeSpan;
-  }
-  
-  if (product.waterUsePerYear !== undefined) {
-    totalCO2 += product.waterUsePerYear * waterCo2EmissionsPerL * product.lifeSpan;
-  }
-  
-  if (product.packagingKindOfMaterial) {
-    const impactFactor = packagingEnvironmentalImpact[product.packagingKindOfMaterial];
-    totalCO2 += impactFactor * 100; 
-    
-    if (product.packagingMaterialFromRecycledMaterials === true) {
-      totalCO2 *= 0.7; 
-    }
-  }
-  return totalCO2;
-};
-
 export const initializeScores = (product: Product): Product => {
   return {
     ...product,
@@ -151,29 +108,3 @@ export const initializeScores = (product: Product): Product => {
     costScore: calculateCostScore(product)
   };
 };
-
-// export const displayProductInfo = (
-//   product: Product, 
-//   ecoPreference: UserPreference = 3, 
-//   costPreference: UserPreference = 3
-// ): string => {
-//   const eco = product.ecoScore ?? calculateEcoScore(product);
-//   const cost = product.costScore ?? calculateCostScore(product);
-//   const overall = getOverallScore(product, ecoPreference, costPreference);
-//   const lifetimeCost = calculateLifetimeCost(product);
-//   const lifetimeCO2 = calculateLifetimeCO2(product);
-  
-//   return `
-//     Product: ${product.name} (ID: ${product.id})
-//     Price: $${product.price.toFixed(2)}
-//     Lifespan: ${product.lifeSpan} years
-//     Eco Score: ${eco.toFixed(1)}/100
-//     Cost Score: ${cost.toFixed(1)}/100
-//     Overall Score: ${overall.toFixed(1)}/100
-    
-//     Lifetime Cost: $${lifetimeCost.toFixed(2)}
-//     Lifetime CO2: ${lifetimeCO2.toFixed(2)} kg
-    
-//     User Preferences Applied: Eco (${ecoPreference}/5), Cost (${costPreference}/5)
-//   `;
-// };

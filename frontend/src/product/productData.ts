@@ -4,7 +4,7 @@ import { UserPreference } from './constants';
 const rawProducts: Product[] = [
   {
     id: 'p001',
-    name: 'Eco-friendly Refrigerator',
+    name: 'Dishwasher 1',
     price: 899.99,
     energyUsePerYear: 250,
     waterUsePerYear: undefined,
@@ -15,7 +15,7 @@ const rawProducts: Product[] = [
   
   {
     id: 'p002',
-    name: 'Standard Washing Machine',
+    name: 'Dishwasher 2',
     price: 499.99,
     energyUsePerYear: 400,
     waterUsePerYear: 9500,
@@ -26,7 +26,7 @@ const rawProducts: Product[] = [
   
   {
     id: 'p003',
-    name: 'Premium Dishwasher',
+    name: 'Dishwasher 3',
     price: 749.99,
     energyUsePerYear: 300,
     waterUsePerYear: 3200,
@@ -37,7 +37,7 @@ const rawProducts: Product[] = [
   
   {
     id: 'p004',
-    name: 'Economy Air Conditioner',
+    name: 'Dishwasher 4',
     price: 349.99,
     energyUsePerYear: 650,
     waterUsePerYear: undefined,
@@ -48,7 +48,7 @@ const rawProducts: Product[] = [
   
   {
     id: 'p005',
-    name: 'Solar Water Heater',
+    name: 'Dishwasher 5',
     price: 1299.99,
     energyUsePerYear: 120,
     waterUsePerYear: 5000,
@@ -67,8 +67,7 @@ export function findBestOverallProducts(
 ): Product[] {
   return [...products]
     .sort((a, b) => 
-      getOverallScore(b, ecoPreference, costPreference) - 
-      getOverallScore(a, ecoPreference, costPreference)
+      getOverallScore(b, ecoPreference, costPreference) - getOverallScore(a, ecoPreference, costPreference)
     )
     .slice(0, count);
 }
