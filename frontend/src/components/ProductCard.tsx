@@ -36,6 +36,14 @@ const ProductCard = (product: Product) => {
                     zł
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
+                    Długość życia:{" "}
+                    {product.lifeSpan} lat
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Rocznie:{" "}
+                    {Math.round(calculateEffectiveCost(product) * 100) / 100} zł
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
                     Rodzaj opakowania:{" "}
                     {product.packagingKindOfMaterial
                         ? product.packagingKindOfMaterial
@@ -43,10 +51,6 @@ const ProductCard = (product: Product) => {
                     {product.packagingMaterialFromRecycledMaterials
                         ? "(z materiałów z recyklingu)"
                         : ""}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Rocznie:{" "}
-                    {Math.round(calculateEffectiveCost(product) * 100) / 100} zł
                 </Typography>
             </CardContent>
         </Card>
