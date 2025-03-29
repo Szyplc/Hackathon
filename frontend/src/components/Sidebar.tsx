@@ -3,7 +3,7 @@ import SliderDemo from "./Slider";
 import CategoryPanel from "./Category";
 import { Box } from "@mui/material";
 
-function App() {
+function Sidebar({ selectedCategory, setSelectedCategory }: Props) {
     const [economicValue, setEconomicValue] = useState(50);
     const [ecologicValue, setEcologicValue] = useState(50);
     const arr_of_category = [
@@ -16,9 +16,6 @@ function App() {
         "inne pojazdy",
         "inne",
     ];
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(
-        null
-    );
 
     return (
         <Box padding={5}>
@@ -41,4 +38,9 @@ function App() {
     );
 }
 
-export default App;
+export default Sidebar;
+
+type Props = {
+    selectedCategory: string | null;
+    setSelectedCategory: (category: string | null) => void;
+};
