@@ -4,13 +4,14 @@ import { UserPreference } from './constants';
 const rawProducts: Product[] = [
   {
     id: 'p001',
-    name: 'Dishwasher 1',
+    name: 'Washing machine 1',
     price: 899.99,
     energyUsePerYear: 250,
     waterUsePerYear: undefined,
     packagingKindOfMaterial: "paper",
     packagingMaterialFromRecycledMaterials: true,
-    lifeSpan: 12
+    lifeSpan: 12,
+    category: "Pralki"
   },
   
   {
@@ -21,7 +22,8 @@ const rawProducts: Product[] = [
     waterUsePerYear: 9500,
     packagingKindOfMaterial: "plastic",
     packagingMaterialFromRecycledMaterials: false,
-    lifeSpan: 8
+    lifeSpan: 8,
+    category: "Pralki"
   },
   
   {
@@ -32,7 +34,8 @@ const rawProducts: Product[] = [
     waterUsePerYear: 3200,
     packagingKindOfMaterial: "glass",
     packagingMaterialFromRecycledMaterials: true,
-    lifeSpan: 10
+    lifeSpan: 10,
+    category: "Pralki"
   },
   
   {
@@ -43,7 +46,8 @@ const rawProducts: Product[] = [
     waterUsePerYear: undefined,
     packagingKindOfMaterial: "metal",
     packagingMaterialFromRecycledMaterials: false,
-    lifeSpan: 6
+    lifeSpan: 6,
+    category: "Pralki"
   },
   
   {
@@ -54,7 +58,8 @@ const rawProducts: Product[] = [
     waterUsePerYear: 5000,
     packagingKindOfMaterial: "paper",
     packagingMaterialFromRecycledMaterials: true,
-    lifeSpan: 15
+    lifeSpan: 15,
+    category: "Pralki"
   }
 ];
 
