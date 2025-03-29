@@ -65,7 +65,6 @@ export const calculateEcoScore = (product: Product): number => {
     score += product.lifeSpan * 4;
   }
   
-  //return Math.max(0, Math.min(100, score));
   return score;
 };
 
@@ -85,22 +84,7 @@ export const calculateEffectiveCost = (product: Product): number => {
 
 
 export const calculateCostScore = (product: Product): number => {
-  let score = 100;
-  
-  if (product.energyUsePerYear !== undefined) {
-    score -= product.energyUsePerYear * energyPricePerKwh;
-  }
-  
-  if (product.waterUsePerYear !== undefined) {
-    score -= product.waterUsePerYear * waterPricePerL;
-  }
-
-  if (product.lifeSpan !== undefined) {
-    score -= product.price / product.lifeSpan; 
-  }
-
-  //return Math.max(0, Math.min(100, score));
-  return score;
+    return -calculateEffectiveCost(product);
 };
 
 export const getOverallScore = (

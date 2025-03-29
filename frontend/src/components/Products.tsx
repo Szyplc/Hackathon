@@ -19,8 +19,9 @@ type Props = {
 
 function getCardData(economicValue: number, ecologicValue: number, category: string | null) {
     if (category == null) return [];
-    return products.filter((product) => product.category === category).map((product) => {
+    const result = products.filter((product) => product.category === category).map((product) => {
         product.score = getOverallScore(product, ecologicValue, economicValue);
         return product;
-    }).sort((a, b) => a.score - b.score);
+    }).sort((a, b) => b.score - a.score);
+    return result;
 }
