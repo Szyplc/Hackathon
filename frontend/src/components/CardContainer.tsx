@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import ProductCard from "./ProductCard";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   description: string;
   imageUrl: string;
@@ -11,7 +11,7 @@ interface CardProps {
 const CardContainer = ({ cards }: { cards: CardProps[] }) => {
   return (
     <Grid container spacing={3}>
-      {cards.map((card: any, index: number) => (
+      {cards.map((card: any) => (
         <Grid component="div">
           <ProductCard {...card} />
         </Grid>

@@ -1,12 +1,12 @@
-import { Card, Grid } from "@mui/material";
-import CardContainer from "./CardContainer";
+import { Grid } from "@mui/material";
+import CardContainer, { CardProps } from "./CardContainer";
 
 const cardData: CardProps[] = [
     {
-      title: "Smartphone",
+      title: "Stock",
       description: "Latest model with advanced features.",
       imageUrl: "https://via.placeholder.com/300",
-      category: "Technology",
+      category: "pralki",
     },
     {
       title: "Yoga Mat",
@@ -38,7 +38,7 @@ const cardData: CardProps[] = [
 export function Products({ selectedCategory }: Props) {
     return (
         <Grid container>
-            <CardContainer cards={cardData} />
+            <CardContainer cards={cardData.filter((card) => (card.category === selectedCategory || selectedCategory == null))} />
         </Grid>
     );
 }
