@@ -1,11 +1,15 @@
-import { useState } from "react";
 import SliderDemo from "./Slider";
 import CategoryPanel from "./Category";
 import { Box } from "@mui/material";
 
-function Sidebar({ selectedCategory, setSelectedCategory }: Props) {
-    const [economicValue, setEconomicValue] = useState(50);
-    const [ecologicValue, setEcologicValue] = useState(50);
+function Sidebar({
+    economicValue,
+    setEconomicValue,
+    ecologicValue,
+    setEcologicValue,
+    selectedCategory,
+    setSelectedCategory,
+}: Props) {
     const arr_of_category = [
         "Pralki",
         "Suszarki",
@@ -41,6 +45,10 @@ function Sidebar({ selectedCategory, setSelectedCategory }: Props) {
 export default Sidebar;
 
 type Props = {
+    economicValue: number;
+    setEconomicValue: (value: number) => void;
+    ecologicValue: number;
+    setEcologicValue: (value: number) => void;
     selectedCategory: string | null;
     setSelectedCategory: (category: string | null) => void;
 };

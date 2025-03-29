@@ -4,6 +4,8 @@ import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 
 function App() {
+    const [economicValue, setEconomicValue] = useState(50);
+    const [ecologicValue, setEcologicValue] = useState(50);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(
         null
     );
@@ -11,10 +13,21 @@ function App() {
     return (
         <Grid container>
             <Grid size={2}>
-                <Sidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+                <Sidebar
+                    economicValue={economicValue}
+                    setEconomicValue={setEconomicValue}
+                    ecologicValue={ecologicValue}
+                    setEcologicValue={setEcologicValue}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                />
             </Grid>
             <Grid size={10}>
-                <Products selectedCategory={selectedCategory} />
+                <Products
+                    economicValue={economicValue}
+                    ecologicValue={ecologicValue}
+                    selectedCategory={selectedCategory}
+                />
             </Grid>
         </Grid>
     );
