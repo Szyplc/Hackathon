@@ -12,12 +12,6 @@ const ProductCard = ({ name, price, imageUrl, costScore, ecoScore }: Product) =>
         <Typography variant="body2" color="text.secondary">
           {price} zł
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Wynik ekonomiczny: {costScore}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Wynik ekologiczny: {ecoScore}
-        </Typography>
       </CardContent>
     </Card>
   );

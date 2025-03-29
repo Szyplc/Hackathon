@@ -30,7 +30,7 @@ const SliderDemo: React.FC<SliderDemoProps> = ({
                     aria-labelledby="basic-slider"
                     valueLabelDisplay="auto"
                     step={1}
-                    min={1}
+                    min={0}
                     max={5}
                     marks
                 />
