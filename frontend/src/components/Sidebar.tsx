@@ -13,11 +13,11 @@ function Sidebar({
     const arr_of_category = [
         "Pralki",
         "Suszarki",
-        "Inne urządzenia",
         "Samochody",
+        "Komputery",
+        "Słuchawki",
         "Motocykle",
         "Rowery",
-        "Inne pojazdy",
         "Inne",
     ];
 

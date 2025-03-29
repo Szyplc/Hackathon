@@ -82,7 +82,7 @@ export const calculateCostScore = (product: Product): number => {
   }
 
   if (product.lifeSpan !== undefined) {
-    score -= product.price / 10 * product.lifeSpan; 
+    score -= product.price / product.lifeSpan; 
   }
 
   //return Math.max(0, Math.min(100, score));
