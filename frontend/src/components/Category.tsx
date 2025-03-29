@@ -4,7 +4,6 @@ import {
     ListItemButton,
     ListItemText,
     Typography,
-    Paper,
 } from "@mui/material";
 
 const CategoryPanel = ({
