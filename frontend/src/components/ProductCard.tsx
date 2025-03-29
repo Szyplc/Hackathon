@@ -24,15 +24,15 @@ const ProductCard = (product: Product) => {
                 <Typography variant="body2" color="text.secondary">
                     Koszt energii rocznie:{" "}
                     {Math.round(
-                        (product.energyUsePerYear || 0) * energyPricePerKwh
-                    )}{" "}
+                        (product.energyUsePerYear || 0) * energyPricePerKwh * 100
+                    ) / 100}{" "}
                     zł
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     Koszt wody rocznie:{" "}
                     {Math.round(
-                        (product.waterUsePerYear || 0) * waterPricePerL
-                    )}{" "}
+                        (product.waterUsePerYear || 0) * waterPricePerL * 100
+                    ) / 100}{" "}
                     zł
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
