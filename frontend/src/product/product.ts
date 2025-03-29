@@ -10,6 +10,8 @@ import {
 export type Product = {
   id: string;
   name: string;
+  imageUrl: string;
+  score?: number;
   category: string;
   price: number;
   energyUsePerYear: number | undefined;
@@ -92,8 +94,10 @@ export const getOverallScore = (
   ecoPreference: UserPreference, 
   costPreference: UserPreference
 ): number => {
-  const ecoScore = product.ecoScore ?? calculateEcoScore(product);
-  const costScore = product.costScore ?? calculateCostScore(product);
+  const ecoScore = calculateEcoScore(product);
+  product.ecoScore = ecoScore;
+  const costScore = calculateCostScore(product);
+  product.costScore = costScore;
 
   const sum = ecoPreference + costPreference;
   const ecoWeight = ecoPreference / sum;

@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import ProductCard from "./ProductCard";
+import { Product } from "../product/product";
 
 export interface CardProps {
   title: string;
@@ -8,7 +9,7 @@ export interface CardProps {
   category: string;
 }
 
-const CardContainer = ({ cards }: { cards: CardProps[] }) => {
+const CardContainer = ({ cards }: { cards: Product[] }) => {
   return (
     <Grid container spacing={3}>
       {cards.map((card: any) => (

@@ -20,12 +20,7 @@ type Props = {
 function getCardData(economicValue: number, ecologicValue: number, category: string | null) {
     if (category == null) return [];
     return products.filter((product) => product.category === category).map((product) => {
-        return ({
-            title: product.name,
-            score: getOverallScore(product, ecologicValue, economicValue),
-            description: `Price: ${product.price} zł`,
-            imageUrl: "https://via.placeholder.com/300",
-            category: product.category,
-        });
-    }).sort((a, b) => b.score - a.score);
+        product.score = getOverallScore(product, ecologicValue, economicValue);
+        return product;
+    }).sort((a, b) => a.score - b.score);
 }

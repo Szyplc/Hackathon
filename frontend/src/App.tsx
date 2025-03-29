@@ -5,8 +5,8 @@ import { useState } from "react";
 import AppTheme from './shared-theme/AppTheme'
 
 function App() {
-    const [economicValue, setEconomicValue] = useState(50);
-    const [ecologicValue, setEcologicValue] = useState(50);
+    const [economicValue, setEconomicValue] = useState(3);
+    const [ecologicValue, setEcologicValue] = useState(3);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(
         null
     );
