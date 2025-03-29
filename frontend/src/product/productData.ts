@@ -66,6 +66,7 @@ const rawProducts: Product[] = [
 export const products: Product[] = rawProducts.map(initializeScores);
 
 export function findBestOverallProducts(
+  products: Product[],
   count: number = 3, 
   ecoPreference: UserPreference = 3, 
   costPreference: UserPreference = 3

@@ -16,8 +16,12 @@ const CategoryPanel = ({
     setSelectedCategory: any;
 }) => {
     const handleSelect = (category: string) => {
-        setSelectedCategory(category);
-        console.log("Selected category:", category);
+        if(category !== selectedCategory) {
+            setSelectedCategory(category);
+        }
+        else {
+            setSelectedCategory(null);
+        }
     };
 
     return (
