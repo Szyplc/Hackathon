@@ -1,4 +1,4 @@
-import { Box, Slider, Typography, Paper } from "@mui/material";
+import { Box, Slider, Typography } from "@mui/material";
 
 interface SliderDemoProps {
     value: number;
@@ -29,6 +29,10 @@ const SliderDemo: React.FC<SliderDemoProps> = ({
                     onChange={handleSliderChange}
                     aria-labelledby="basic-slider"
                     valueLabelDisplay="auto"
+                    step={1}
+                    min={1}
+                    max={5}
+                    marks
                 />
             </Box>
         </Box>
