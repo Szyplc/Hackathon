@@ -19,22 +19,20 @@ const SliderDemo: React.FC<SliderDemoProps> = ({
     };
 
     return (
-        <Paper elevation={3} sx={{ p: 3, maxWidth: 600, mx: "auto" }}>
-            <Box>
-                <Typography id="basic-slider" gutterBottom>
-                    {label}
-                </Typography>
-                <Box sx={{ width: "100%", mr: 2 }}>
-                    <Slider
-                        value={value}
-                        onChange={handleSliderChange}
-                        aria-labelledby="basic-slider"
-                        valueLabelDisplay="auto"
-                    />
-                </Box>
+        <Box>
+            <Typography id="basic-slider" gutterBottom>
+                {label}
+            </Typography>
+            <Box sx={{ width: "100%", mr: 2 }}>
+                <Slider
+                    value={value}
+                    onChange={handleSliderChange}
+                    aria-labelledby="basic-slider"
+                    valueLabelDisplay="auto"
+                />
             </Box>
-        </Paper>
+        </Box>
     );
-};
+}
 
 export default SliderDemo;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SliderDemo from "./Slider";
 import CategoryPanel from "./Category";
+import { Box } from "@mui/material";
 
 function App() {
     const [economicValue, setEconomicValue] = useState(50);
@@ -20,14 +21,14 @@ function App() {
     );
 
     return (
-        <>
+        <Box padding={5}>
             <SliderDemo
-                label="Economic"
+                label="Ekonomia"
                 value={economicValue}
                 setValue={(value: number) => setEconomicValue(value)}
             />
             <SliderDemo
-                label="Economic"
+                label="Ekologia"
                 value={ecologicValue}
                 setValue={(value: number) => setEcologicValue(value)}
             />
@@ -36,7 +37,7 @@ function App() {
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
             />
-        </>
+        </Box>
     );
 }
 
