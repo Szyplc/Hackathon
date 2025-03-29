@@ -1,4 +1,4 @@
-import { Box, Slider, Typography, Paper } from "@mui/material";
+import { Box, Slider, Typography } from "@mui/material";
 
 interface SliderDemoProps {
     value: number;
