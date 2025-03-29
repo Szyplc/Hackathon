@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material";
-import SliderDemo from "./components/Slider";
 import { Products } from "./components/Products";
+import Sidebar from "./components/Sidebar";
 
 function App() {
     return (
         <Grid container>
             <Grid size={2}>
-                <SliderDemo  />
+                <Sidebar />
             </Grid>
             <Grid size={10}>
                 <Products />
