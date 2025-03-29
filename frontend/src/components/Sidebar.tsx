@@ -7,14 +7,14 @@ function Sidebar({ selectedCategory, setSelectedCategory }: Props) {
     const [economicValue, setEconomicValue] = useState(50);
     const [ecologicValue, setEcologicValue] = useState(50);
     const arr_of_category = [
-        "pralki",
-        "suszarki",
-        "inne urządzenia",
-        "jezdzace",
-        "latajace",
-        "plywajace",
-        "inne pojazdy",
-        "inne",
+        "Pralki",
+        "Suszarki",
+        "Inne urządzenia",
+        "Samochody",
+        "Motocykle",
+        "Rowery",
+        "Inne pojazdy",
+        "Inne",
     ];
 
     return (

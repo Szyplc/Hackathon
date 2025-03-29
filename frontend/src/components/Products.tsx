@@ -36,14 +36,8 @@ const cardData: CardProps[] = [
   
 
 export function Products({ selectedCategory }: Props) {
-    const products = [1, 2, 3];
     return (
         <Grid container>
-            {products.map((product) => (
-                <Grid key={product}>
-                    <Card>Product</Card>
-                </Grid>
-            ))}
             <CardContainer cards={cardData} />
         </Grid>
     );
