@@ -19,7 +19,6 @@ export type Product = {
   packagingKindOfMaterial: "plastic" | "paper" | "glass" | "metal" | undefined;
   packagingMaterialFromRecycledMaterials: boolean | undefined;
   lifeSpan: number;
-  // url: string;
   
   ecoScore?: number;
   costScore?: number;
