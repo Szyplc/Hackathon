@@ -24,7 +24,7 @@ function App() {
                             setSelectedCategory={setSelectedCategory}
                         />
                     </Grid>
-                    <Grid size={10}>
+                    <Grid size={10} sx={{ marginTop: "10px" }}>
                         <Products
                             economicValue={economicValue}
                             ecologicValue={ecologicValue}

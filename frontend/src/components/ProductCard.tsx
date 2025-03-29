@@ -6,7 +6,7 @@ const ProductCard = (product: Product) => {
     const { name, price, imageUrl } = product;
     return (
         <Card
-            sx={{ minWidth: 250, maxWidth: 250, borderRadius: 2, boxShadow: 3 }}
+            sx={{ minWidth: 250, maxWidth: 250, borderRadius: 2, boxShadow: 3, minHeight: 250, maxHeight: 250 }}
         >
             <CardMedia
                 component="img"
