@@ -22,7 +22,30 @@ const ProductCard = (product: Product) => {
                     {price} zł
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Efektywny koszt roczny:{" "}
+                    Koszt energii rocznie:{" "}
+                    {Math.round(
+                        (product.energyUsePerYear || 0) * energyPricePerKwh
+                    )}{" "}
+                    zł
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Koszt wody rocznie:{" "}
+                    {Math.round(
+                        (product.waterUsePerYear || 0) * waterPricePerL
+                    )}{" "}
+                    zł
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Koszt opakowania:{" "}
+                    {product.packagingKindOfMaterial
+                        ? product.packagingKindOfMaterial
+                        : "Brak danych"}{" "}
+                    {product.packagingMaterialFromRecycledMaterials
+                        ? "(z materiałów z recyklingu)"
+                        : ""}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Rocznie:{" "}
                     {Math.round(calculateEffectiveCost(product) * 100) / 100} zł
                 </Typography>
             </CardContent>
